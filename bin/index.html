@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-ngController-production</title>
+  
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular.min.js"></script>
+  <script src="app.js"></script>
+  
+
+  
+</head>
+<body ng-app="controllerExample">
+ <div id="ctrl-exmpl" ng-controller="SettingsController2">
+   Path: <input type="text" ng-model="name"/>
+   [ <a href="" ng-click="file()">File</a> ]
+   [ <a href="" ng-click="dir()">Dir</a> ]<br/>
+   File Info:
+
+   
+   <ul>
+     <li ng-repeat="fileInfo in files">
+
+
+       <input type="text" ng-model="fileInfo.name"/>
+       <input type="text" ng-model="fileInfo.type"/>
+       <input type="text" ng-model="fileInfo.fullPath"/>
+       <input type="text" ng-model="fileInfo.size"/>
+       <input type="text" ng-model="fileInfo.filePermission"/>
+       <ul>
+       	<li ng-repeat="fileInfo1 in files[0].children">
+       		
+           <input type="text" ng-model="fileInfo1.name"/>
+           <input type="text" ng-model="fileInfo1.type"/>
+           <input type="text" ng-model="fileInfo1.fullPath"/>
+           <input type="text" ng-model="fileInfo1.size"/>
+           <input type="text" ng-model="fileInfo1.filePermission"/>
+           <ul>
+            <li ng-repeat="fileInfo2 in fileInfo.children[0].children">
+
+             <input type="text" ng-model="fileInfo2.name"/>
+             <input type="text" ng-model="fileInfo2.type"/>
+             <input type="text" ng-model="fileInfo2.fullPath"/>
+             <input type="text" ng-model="fileInfo2.size"/>
+             <input type="text" ng-model="fileInfo2.filePermission"/>
+             <ul>
+              <li ng-repeat="fileInfo3 in fileInfo.children[0].children[0].children">
+
+               <input type="text" ng-model="fileInfo3.name"/>
+               <input type="text" ng-model="fileInfo3.type"/>
+               <input type="text" ng-model="fileInfo3.fullPath"/>
+               <input type="text" ng-model="fileInfo3.size"/>
+               <input type="text" ng-model="fileInfo3.filePermission"/>
+             </li>
+
+           </ul>
+         </li>
+
+       </ul>
+     </li>
+
+   </ul>
+
+ </li>
+</ul>
+</div>
+</body>
+</html>
